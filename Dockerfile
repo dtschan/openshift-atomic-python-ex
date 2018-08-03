@@ -6,7 +6,8 @@ RUN microdnf --enablerepo=rhel-7-server-rpms \
 
 ADD index.html /tmp/index.html
 
-EXPOSE 8080
+ENV HTTP_PORT 8080
+EXPOSE ${HTTP_PORT}
 
 WORKDIR /tmp
-CMD ["/usr/bin/python", "-m", "SimpleHTTPServer", "8080"]
+CMD ["/usr/bin/python", "-m", "SimpleHTTPServer", "${HTTP_PORT}"]

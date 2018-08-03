@@ -10,4 +10,4 @@ ENV HTTP_PORT 8080
 EXPOSE ${HTTP_PORT}
 
 WORKDIR /tmp
-CMD ["/usr/bin/python", "-m", "SimpleHTTPServer", ${HTTP_PORT}]
+CMD "/usr/bin/python -m SimpleHTTPServer ${HTTP_PORT}"
